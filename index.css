@@ -350,7 +350,7 @@ select {
 }
 
 .primary-navigation {
-  --gap: clamp(1.5rem, 7vw, 3.5rem);
+  --gap: clamp(1.5rem, 10vw, 3.5rem);
   --underline-gap: 2rem;
 
   list-style: none;
@@ -435,13 +435,28 @@ select {
   }
 }
 
-@media (min-width: 35em) and (max-width: 45em) {
+@media (min-width: 35em) and (max-width: 44.999em) {
   .primary-navigation a > span {
     display: none;
   }
 }
 
 @media (min-width: 45em) {
+  .primary-header::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background: hsl(var(--clr-white) / 0.25);
+    margin-right: -2.5rem;
+    order: 1;
+  }
+
+  nav {
+    order: 2;
+  }
+
   .primary-navigation {
     margin-block: 2rem;
   }
